@@ -10,9 +10,9 @@ class Utility
 {
     static auto xorshift128Plus() -> uint64_t;
     static uint64_t state[2];
-    static auto initializeSeed() -> void;
 
 public:
+    static auto initializeSeed() -> void;
     static auto randomPitch() -> Pitch;
     static auto randomOctave() -> int;
     static auto randomDuration() -> Duration;
