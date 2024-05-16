@@ -32,21 +32,21 @@ auto Utility::randomDuration() -> Duration
 auto Utility::generateRandomIndividual(const int melodyLength) -> Individual
 {
     std::vector<Note> melody;
-    for (int i = 0; i < melodyLength; ++i)
+    for (int i{0}; i < melodyLength; ++i)
     {
         Pitch pitch = randomPitch();
         int octave = randomOctave();
         Duration duration = randomDuration();
         melody.emplace_back(pitch, octave, duration);
     }
-    constexpr double initialFitness = 0.0;
+    constexpr double initialFitness{0.0};
     return Individual{melody, initialFitness};
 }
 
 auto Utility::initializePopulation(const int populationSize, const int melodyLength) -> std::vector<Individual>
 {
     std::vector<Individual> population;
-    for (int i = 0; i < populationSize; ++i)
+    for (int i{0}; i < populationSize; ++i)
     {
         population.push_back(generateRandomIndividual(melodyLength));
     }
@@ -57,20 +57,20 @@ auto Utility::initializePopulation(const int populationSize, const int melodyLen
 auto Utility::initializeSeed() -> void
 {
     std::random_device rd;
-    state[0] = rd();
-    state[1] = rd();
+    state[0] = {rd()};
+    state[1] = {rd()};
 }
 
 uint64_t Utility::state[2] = {0, 0};
 
 auto Utility::xorshift128plus() -> uint64_t
 {
-    uint64_t firstPart = state[0];
-    const uint64_t secondPart = state[1];
+    uint64_t firstPart{state[0]};
+    const uint64_t secondPart{state[1]};
     state[0] = secondPart;
     firstPart ^= firstPart << 23;
     firstPart ^= firstPart >> 17;
     firstPart ^= secondPart ^ (secondPart >> 26);
-    state[1] = firstPart;
+    state[1] = {firstPart};
     return state[1] + secondPart;
 }

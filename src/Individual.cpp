@@ -1,5 +1,10 @@
 #include "../include/Individual.h"
 
+Individual::Individual(const std::vector<Note>& melody, const double fitness): melody{melody},
+                                                                               fitness{fitness}
+{
+}
+
 auto Individual::getMelody() const -> const std::vector<Note>&
 {
     return melody;

@@ -15,16 +15,7 @@ class Note
     Duration duration;
 
 public:
-    [[nodiscard]] Note(const Pitch pitch, const int octave, const Duration duration)
-        : pitch(pitch),
-          octave(octave),
-          duration(duration)
-    {
-        if (octave < MIN_OCTAVE || octave > MAX_OCTAVE)
-        {
-            throw std::out_of_range("Octave out of valid range");
-        }
-    }
+    [[nodiscard]] Note(Pitch pitch, int octave, Duration duration);
 
     [[nodiscard]] auto getPitch() const -> Pitch;
     auto setPitch(Pitch pitch) -> void;

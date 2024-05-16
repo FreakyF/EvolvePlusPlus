@@ -10,11 +10,7 @@ class Individual
     double fitness;
 
 public:
-    [[nodiscard]] Individual(const std::vector<Note>& melody, const double fitness)
-        : melody(melody),
-          fitness(fitness)
-    {
-    }
+    [[nodiscard]] Individual(const std::vector<Note>& melody, double fitness);
 
     [[nodiscard]] auto getMelody() const -> const std::vector<Note>&;
 
