@@ -1,6 +1,4 @@
-#ifndef DURATION_H
-#define DURATION_H
-
+#pragma once
 
 enum class Duration
 {
@@ -10,6 +8,3 @@ enum class Duration
     eighth = 8,
     sixteenth = 16
 };
-
-
-#endif //DURATION_H

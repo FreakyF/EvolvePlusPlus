@@ -1,5 +1,4 @@
-#ifndef NOTE_H
-#define NOTE_H
+#pragma once
 
 #include <stdexcept>
 
@@ -36,6 +35,3 @@ public:
     [[nodiscard]] auto getDuration() const -> Duration;
     auto setDuration(Duration duration) -> void;
 };
-
-
-#endif //NOTE_H
