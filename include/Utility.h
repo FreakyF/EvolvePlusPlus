@@ -8,7 +8,7 @@
 
 class Utility
 {
-    static auto xorshift128plus() -> uint64_t;
+    static auto xorshift128Plus() -> uint64_t;
     static uint64_t state[2];
     static auto initializeSeed() -> void;
 

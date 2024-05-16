@@ -4,17 +4,17 @@
 
 auto Utility::randomPitch() -> Pitch
 {
-    return static_cast<Pitch>(xorshift128plus() % 7);
+    return static_cast<Pitch>(xorshift128Plus() % 7);
 }
 
 auto Utility::randomOctave() -> int
 {
-    return static_cast<int>(MIN_OCTAVE + (xorshift128plus() % (MAX_OCTAVE - MIN_OCTAVE + 1)));
+    return static_cast<int>(MIN_OCTAVE + (xorshift128Plus() % (MAX_OCTAVE - MIN_OCTAVE + 1)));
 }
 
 auto Utility::randomDuration() -> Duration
 {
-    switch (xorshift128plus() % 5)
+    switch (xorshift128Plus() % 5)
     {
     case 0:
         return Duration::whole;
@@ -63,7 +63,7 @@ auto Utility::initializeSeed() -> void
 
 uint64_t Utility::state[2] = {0, 0};
 
-auto Utility::xorshift128plus() -> uint64_t
+auto Utility::xorshift128Plus() -> uint64_t
 {
     uint64_t firstPart{state[0]};
     const uint64_t secondPart{state[1]};
