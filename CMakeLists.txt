@@ -10,4 +10,6 @@ add_executable(EvolvePlusPlus main.cpp
         include/Pitch.h
         src/Duration.cpp
         include/Duration.h
+        src/Individual.cpp
+        include/Individual.h
 )
