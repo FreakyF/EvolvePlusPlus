@@ -1,4 +1,5 @@
 #pragma once
+#include <ostream>
 
 enum class Duration
 {
@@ -8,3 +9,6 @@ enum class Duration
     eighth = 8,
     sixteenth = 16
 };
+
+std::ostream& operator<<(std::ostream& os, Duration duration);
+

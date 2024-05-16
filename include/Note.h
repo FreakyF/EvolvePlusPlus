@@ -25,4 +25,6 @@ public:
 
     [[nodiscard]] auto getDuration() const -> Duration;
     auto setDuration(Duration duration) -> void;
+
+    friend std::ostream& operator<<(std::ostream& os, const Note& note);
 };

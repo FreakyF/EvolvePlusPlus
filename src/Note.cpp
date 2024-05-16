@@ -43,3 +43,11 @@ auto Note::setDuration(const Duration duration) -> void
 {
     this->duration = duration;
 }
+
+std::ostream& operator<<(std::ostream& os, const Note& note)
+{
+    os << "Pitch: " << static_cast<int>(note.getPitch())
+   << ", Octave: " << note.getOctave()
+   << ", Duration: " << static_cast<int>(note.getDuration());
+    return os;
+}
