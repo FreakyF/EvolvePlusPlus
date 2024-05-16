@@ -12,4 +12,6 @@ add_executable(EvolvePlusPlus main.cpp
         include/Duration.h
         src/Individual.cpp
         include/Individual.h
+        src/Utility.cpp
+        include/Utility.h
 )
