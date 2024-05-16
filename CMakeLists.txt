@@ -15,3 +15,9 @@ add_executable(EvolvePlusPlus main.cpp
         include/Utility.h
         src/Duration.cpp
 )
+
+find_package(RtAudio CONFIG REQUIRED)
+target_link_libraries(EvolvePlusPlus PRIVATE RtAudio::rtaudio)
+
+find_package(unofficial-libstk CONFIG REQUIRED)
+target_link_libraries(EvolvePlusPlus PRIVATE unofficial::libstk::libstk)
