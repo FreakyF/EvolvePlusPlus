@@ -1,0 +1,15 @@
+#ifndef DURATION_H
+#define DURATION_H
+
+
+enum class Duration
+{
+    whole = 1,
+    half = 2,
+    quarter = 4,
+    eighth = 8,
+    sixteenth = 16
+};
+
+
+#endif //DURATION_H
