@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 26)
 add_executable(EvolvePlusPlus main.cpp
         src/Note.cpp
         include/Note.h
-        src/Pitch.cpp
         include/Pitch.h
         include/Duration.h
         src/Individual.cpp
@@ -14,6 +13,10 @@ add_executable(EvolvePlusPlus main.cpp
         src/Utility.cpp
         include/Utility.h
         src/Duration.cpp
+        src/SoundGenerator.cpp
+        include/SoundGenerator.h
+        include/Evaluator.cpp
+        include/Evaluator.h
 )
 
 find_package(RtAudio CONFIG REQUIRED)
