@@ -1,19 +1,21 @@
 #include <iostream>
 
+#include "include/SoundGenerator.h"
 #include "include/Utility.h"
 
 auto main() -> int
 {
-
     Utility::initializeSeed();
-    for (const auto x = Utility::initializePopulation(2, 16); const auto& i : x)
+
+    constexpr int melodyLength = 16;
+    const Individual randomIndividual = Utility::generateRandomIndividual(melodyLength);
+    std::vector<Note> melody = randomIndividual.getMelody();
+
+    std::cout << "Generated Melody: \n";
+    for (const auto& note : melody)
     {
-        std::cout << "Fitness: " << i.getFitness() << std::endl;
-        for (const auto& melody = i.getMelody(); const auto& note : melody)
-        {
-            std::cout << note << " ";
-        }
-        std::cout << std::endl;
+        std::cout << note << '\n';
     }
-    return 0;
+
+    SoundGenerator::playMelody(melody);
 }
